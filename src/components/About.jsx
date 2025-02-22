@@ -39,20 +39,24 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <p className={styles.sectionSubText}>About the Event</p>
+        <h2 className={styles.sectionHeadText}>What is Vision 2025?</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        Vision 2025 is an exciting 24-hour hackathon where developers, designers,
+        and innovators collaborate to build groundbreaking solutions. Whether you're a beginner
+        or an experienced coder, this is your opportunity to innovate, network, and showcase
+        your skills in a competitive environment!
       </motion.p>
+
+      <motion.div variants={textVariant()}>
+      <h2 className={styles.sectionHeadText}>Themes:</h2>
+      </motion.div>
+
 
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (
