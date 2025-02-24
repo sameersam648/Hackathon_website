@@ -74,7 +74,7 @@ const HackathonTimeline = () => {
       {/* Animated Title */}
       <motion.div variants={textVariant()} className="text-center">
         <p className={`${styles.sectionSubText}`}>Event Schedule</p>
-        <h1 className="text-5xl font-bold mt-4 neon-heading">
+        <h1 className="text-6xl font-bold mt-4 neon-heading">
           Hackathon Timeline
         </h1>
       </motion.div>

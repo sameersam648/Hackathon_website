@@ -17,7 +17,7 @@ const ProfileCard = ({ index, name, image, description}) => {
         <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg">
           <img src={image} alt={name} className="w-full h-full object-cover" />
         </div>
-        <h3 className="text-white font-bold text-[18px] mt-3">{name}</h3>
+        <h3 className="text-white font-cyber text-[18px] mt-3">{name}</h3>
         <p className="text-secondary text-[14px]">{description}</p>
       </Tilt>
     </motion.div>
@@ -28,14 +28,14 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>The CSX</p>
-        <h2 className={`${styles.sectionHeadText}`}>Team VISION:</h2>
+        <p className={`${styles.sectionSubText}  font-cyber`}>The CSX</p>
+        <h2 className={`${styles.sectionHeadText} font-cyber`}>Team VISION:</h2>
       </motion.div>
 
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] font-cyber"
         >
           Our team consists of dedicated and skilled professionals who bring a
           wealth of knowledge and expertise to the table. Each member plays a

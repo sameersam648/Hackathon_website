@@ -22,8 +22,8 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        <p className={styles.sectionSubText}>contact</p>
-        <h3 className={styles.sectionHeadText}>Get in Touch</h3>
+        <p className={' ${styles.sectionSubText} font-cyber'}>contact</p>
+        <h3 className={'{styles.sectionHeadText} font-cyber'}>Get in Touch</h3>
 
         <div className="mt-8 flex flex-col gap-6">
           {contacts.map((contact, index) => (
@@ -31,9 +31,9 @@ const Contact = () => {
               key={index}
               className="bg-tertiary p-4 rounded-lg shadow-md shadow-primary"
             >
-              <h4 className="text-white font-bold text-lg">{contact.name}</h4>
-              <p className="text-secondary">{contact.role}</p>
-              <p className="text-white font-medium">{contact.phone}</p>
+              <h4 className="text-white font-cyber">{contact.name}</h4>
+              <p className="text-secondary font-cyber">{contact.role}</p>
+              <p className="text-white font-cyber">{contact.phone}</p>
             </div>
           ))}
         </div>
