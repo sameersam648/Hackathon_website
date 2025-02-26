@@ -13,8 +13,7 @@ The **BTI 24-Hour Hackathon** is an intense and exciting event where participant
 - 📢 **Announcements Section** - Stay updated with important notices.
 
 ## 🛠️ Tech Stack
-- **Frontend:**, CSS, JavaScript (React/Next.js)
+- **Frontend:**, CSS, JavaScript (React)
 - **Backend:** Node.js, Express.js
-- **Database:** Firebase / MongoDB
 - **Hosting:** Vercel / Netlify
 
