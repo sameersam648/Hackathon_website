@@ -55,7 +55,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden sm:flex flex-row gap-10 font-cyber">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
