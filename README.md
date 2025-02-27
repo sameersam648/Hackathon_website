@@ -1,4 +1,3 @@
-
 # 24-Hour Hackathon @ BTI
 
 Welcome to the official website for the **24-Hour Hackathon at BTI**! This website provides details about the event, registration process, schedule, judging criteria, and more.
