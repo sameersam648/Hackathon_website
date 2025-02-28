@@ -1,7 +1,7 @@
 # 24-Hour Hackathon @ BTI
 
 Welcome to the official website for the **24-Hour Hackathon at BTI**! This website provides details about the event, registration process, schedule, judging criteria, and more.
-
+                                                                          
 ## 🚀 About the Hackathon
 The **BTI 24-Hour Hackathon** is an intense and exciting event where participants collaborate, innovate, and build creative solutions within a 24-hour timeframe. It brings together students, developers, and tech enthusiasts to solve real-world problems through technology.
 
