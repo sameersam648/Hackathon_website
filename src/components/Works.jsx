@@ -7,7 +7,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProfileCard = ({ index, name, image, description}) => {
+const ProfileCard = ({ index, name, image, description,source_code_link}) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -29,7 +29,7 @@ const Works = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText}  font-cyber`}>The CSX</p>
-        <h2 className={`${styles.sectionHeadText} font-cyber`}>Team VISION:</h2>
+        <h2 className={`${styles.sectionHeadText} font-cyber`}>Team HACK FEST:</h2>
       </motion.div>
 
       <div className="w-full flex">

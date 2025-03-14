@@ -25,7 +25,7 @@ const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
@@ -34,7 +34,6 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white font-cyber`}>
-            Welcome to 
             <motion.span
               className="text-[#ffffff] font-extrabold tracking-wide relative"
               style={{
@@ -51,42 +50,29 @@ const Hero = () => {
               }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{
-                opacity: [0, 1, 0, 2, 0.3, 0, 1, 0, 0.1, 0.9, 0,0, 1], // Flickering effect
-                scale: [0.8, 0.2, 1, 0.1, 0.95, 0.1, 1], // Slight scale effect for realism
+                opacity: [0, 1, 0, 2, 0.3, 0, 1, 0, 0.1, 0.9, 0, 0, 1], 
+                scale: [0.8, 0.2, 1, 0.1, 0.95, 0.1, 1], 
               }}
               transition={{
-                duration: 3, // Faster flickering effect
+                duration: 3, 
                 ease: "easeOut",
-                times: [0, 0.08, 0.15, 0.22, 0.3, 0.38, 0.45, 0.52, 0.6, 0.68, 0.75, 1], // Quick flicker timings
+                times: [0, 0.08, 0.15, 0.22, 0.3, 0.38, 0.45, 0.52, 0.6, 0.68, 0.75, 1], 
               }}
             >
-              "VISION'25"
+            HACK-FEST '25
             </motion.span>
-
-
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100 font-cyber`}>
-            Conducted by Robotics and Artificial Intelligence <br className='sm:block hidden text-yellow-300' />
-            Code, Connect, Compete.
+            <p className={`${styles.heroSubText} mt-2 text-white-100 font-cyber`}>
+            <p className='text-yellow-300 font-cyber'>Code, Compete ,Conqure</p>
           </p>
+          </h1>
+           
         </div>
       </div>
 
-      <ComputersCanvas />
-
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
-        <a href='#about'>
-          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
-            <motion.div
-              animate={{ y: [0, 24, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, repeatType:1 }}
-              className='w-3 h-3 rounded-full bg-secondary mb-1'
-            />
-          </div>
-        </a>
-      </div>
+      
     </section>
   );
 };
+
 
 export default Hero;

@@ -46,7 +46,7 @@ const Navbar = () => {
             style={{ width: "170px", height: "60px" }}
           />
           <p className="text-white text-[18px] font-cyber">
-            VISION 2025;
+            HACK FEST 2025;
             <span className="sm:block hidden font-cyber" >
               {" "}
               | Bangalore Technological Institute
