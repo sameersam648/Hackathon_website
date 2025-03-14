@@ -144,7 +144,8 @@ const projects = [
     description:
       "RO&AI, BTI",
     image: carrent,
-    source_code_link: "https:/sameersam648/github.com/",
+    source_code_link: "https://github.com/sameersam648",
+    linkedin_link: "https://www.linkedin.com/in/sameer-sam-7b7b3b1b7/",
   },
   {
     name: "Jeelan Basha",

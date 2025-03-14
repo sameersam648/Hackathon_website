@@ -6,19 +6,46 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import githubIcon from "../assets/github.png"; // Importing GitHub icon
+import linkedinIcon from "../assets/linkedin.png"; // Importing LinkedIn icon
 
-const ProfileCard = ({ index, name, image, description,source_code_link}) => {
+const ProfileCard = ({ index, name, image, description, source_code_link, linkedin_link }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
         options={{ max: 45, scale: 1, speed: 450 }}
-        className="flex flex-col items-center"
+        className="flex flex-col items-center relative p-6 bg-gray-900 rounded-lg shadow-lg"
       >
-        <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg">
+        {/* GitHub & LinkedIn Icons positioned OUTSIDE the image but inside the card */}
+        <div className="absolute top-2 left-2 bg-gray-800 p-2 rounded-full shadow-lg">
+          <a 
+            href={source_code_link} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-8 h-8 flex"
+          >
+            <img src={githubIcon} alt="GitHub" className="w-full h-full object-contain" />
+          </a>
+        </div>
+
+        <div className="absolute top-2 right-2 bg-gray-800 p-2 rounded-full shadow-lg">
+          <a 
+            href={linkedin_link} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-8 h-8 flex"
+          >
+            <img src={linkedinIcon} alt="LinkedIn" className="w-full h-full object-contain" />
+          </a>
+        </div>
+
+        {/* Profile Image */}
+        <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg mt-6">
           <img src={image} alt={name} className="w-full h-full object-cover" />
         </div>
+
         <h3 className="text-white font-cyber text-[18px] mt-3">{name}</h3>
-        <p className="text-secondary text-[14px]">{description}</p>
+        <p className="text-secondary text-[14px] text-center">{description}</p>
       </Tilt>
     </motion.div>
   );
@@ -28,7 +55,7 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText}  font-cyber`}>The CSX</p>
+        <p className={`${styles.sectionSubText} font-cyber`}>The CSX</p>
         <h2 className={`${styles.sectionHeadText} font-cyber`}>Team HACK FEST:</h2>
       </motion.div>
 
@@ -50,7 +77,6 @@ const Works = () => {
           <ProfileCard key={`profile-${index}`} index={index} {...project} />
         ))}
       </div>
-     
     </>
   );
 };
