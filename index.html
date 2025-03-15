@@ -5,18 +5,41 @@
     <link rel="icon" type="image/svg+xml" href="/logobti.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BTI | VISION'25</title>
+    <link rel="stylesheet" href="/src/index.css" />
   </head>
   <body>
-    <div id="robot-3d">
-    <spline-viewer class="robot-3d" url="https://prod.spline.design/n1GgQ7m-zUCZcmW3/scene.splinecode"></spline-viewer>
-          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.77/build/spline-viewer.js"></script>
-        </div>
-
-    </div>
-    <div id="root">    </div>
+    <div id="root"></div>
     
     
     <script type="module" src="/src/main.jsx"></script>
     
+    <script>
+      // Wait for the main content to load
+      window.addEventListener('load', () => {
+        const robot3dContainer = document.createElement('div');
+        robot3dContainer.id = 'robot-3d';
+        robot3dContainer.innerHTML = `
+          <spline-viewer class="robot-3d" url="https://prod.spline.design/n1GgQ7m-zUCZcmW3/scene.splinecode"></spline-viewer>
+        `;
+        document.body.appendChild(robot3dContainer);
+
+        // Dynamically load the Spline viewer script
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = 'https://unpkg.com/@splinetool/viewer@1.9.77/build/spline-viewer.js';
+        document.body.appendChild(script);
+
+        // Update loading progress
+        const loadingText = document.getElementById('loading-text');
+        const splineViewer = document.querySelector('spline-viewer');
+        splineViewer.addEventListener('load', () => {
+          document.getElementById('loader').style.display = 'none';
+        });
+        splineViewer.addEventListener('progress', (event) => {
+          const progress = Math.round(event.detail * 100);
+          loadingText.textContent = `Loading... ${progress}%`;
+        });
+      });
+    </script>
   </body>
 </html>
