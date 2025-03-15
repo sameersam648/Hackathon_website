@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@react-three/drei": "^9.56.24",
