@@ -153,7 +153,9 @@ const projects = [
       "AI&ML, BTI",
    
     image: jobit,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/Jeelan80",
+    linkedin_link: "https://www.linkedin.com/in/jeelan-basha-508a19314/",
+
   },
   {
     name: "Aman Kumar",
@@ -161,55 +163,9 @@ const projects = [
       "AI&ML, BTI",
     
     image: tripguide,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Likith",
-    description:
-      "AI&ML, BTI",
-    
-    image: likith,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Likith",
-    description:
-      "AI&ML, BTI",
-    
-    image: tripguide,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Likith",
-    description:
-      "AI&ML, BTI",
-    
-    image: tripguide,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Likith",
-    description:
-      "AI&ML, BTI",
-    
-    image: tripguide,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Likith",
-    description:
-      "AI&ML, BTI",
-    
-    image: tripguide,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Likith",
-    description:
-      "AI&ML, BTI",
-    
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/Amankumar006",
+    linkedin_link: "https://www.linkedin.com/in/aman-kumar-8102bb279/",
+
   },
 ];
 
