@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState, lazy } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
@@ -16,12 +16,12 @@ const Computers = ({ isMobile }) => {
         penumbra={1}
         intensity={1}
         castShadow
-        shadow-mapSize={1024}
+        shadow-mapSize={isMobile ? 512 : 1024}
       />
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
+        scale={isMobile ? 0.5 : 0.75}
         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
@@ -29,8 +29,12 @@ const Computers = ({ isMobile }) => {
   );
 };
 
+// Unload model when not needed
+useGLTF.preload("./desktop_pc/scene.gltf");
+
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [shouldRender, setShouldRender] = useState(true);
 
   useEffect(() => {
     // Add a listener for changes to the screen size
@@ -38,6 +42,10 @@ const ComputersCanvas = () => {
 
     // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
+    
+    // Check if it's a low-end device
+    const isLowEndDevice = mediaQuery.matches && navigator.hardwareConcurrency <= 4;
+    setShouldRender(!isLowEndDevice);
 
     // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
@@ -53,19 +61,25 @@ const ComputersCanvas = () => {
     };
   }, []);
 
+  if (!shouldRender) {
+    return null;
+  }
+
   return (
     <Canvas
       frameloop='demand'
       shadows
-      dpr={[1, 2]}
+      dpr={isMobile ? 1 : [1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance", antialias: !isMobile }}
+      style={{ height: isMobile ? '50vh' : '60vh' }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
+          enableDamping={false}
         />
         <Computers isMobile={isMobile} />
       </Suspense>
