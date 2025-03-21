@@ -6,7 +6,7 @@ Welcome to the **Hackathon Website** repository! This project is a sleek, modern
 
 ## 🌐 Live Demo
 
-Check out the live version of the website here: https:btihackfest.netlify.app
+Check out the live version of the website here: [https:btihackfest.netlify.app](https://btihackfest25.netlify.app/)
 ---
 
 ## 📖 Features
