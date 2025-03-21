@@ -5,11 +5,13 @@ import * as random from "maath/random/dist/maath-random.esm";
 
 const Stars = (props) => {
   const ref = useRef();
-  const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.2 }));
+  // Reduce number of particles based on device performance
+  const particleCount = window.innerWidth < 768 ? 1500 : 3000;
+  const [sphere] = useState(() => random.inSphere(new Float32Array(particleCount), { radius: 1.2 }));
 
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
+    ref.current.rotation.x -= delta / 15;
+    ref.current.rotation.y -= delta / 20;
   });
 
   return (
@@ -28,13 +30,22 @@ const Stars = (props) => {
 };
 
 const StarsCanvas = () => {
+  // Don't render on mobile devices with low performance
+  const [isLowEnd] = useState(() => {
+    // Simple heuristic for low-end devices
+    return window.innerWidth < 768 && navigator.hardwareConcurrency <= 4;
+  });
+
+  if (isLowEnd) {
+    return <div className='w-full h-auto absolute inset-0 z-[-1] bg-primary'></div>;
+  }
+
   return (
     <div className='w-full h-auto absolute inset-0 z-[-1]'>
-      <Canvas camera={{ position: [0, 0, 1] }}>
+      <Canvas camera={{ position: [0, 0, 1] }} dpr={[1, 1.5]}>
         <Suspense fallback={null}>
           <Stars />
         </Suspense>
-
         <Preload all />
       </Canvas>
     </div>

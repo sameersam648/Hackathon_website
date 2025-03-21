@@ -28,7 +28,7 @@ export const navLinks = [
     title: "About",
   },
   {
-    id: "work",
+    id: "team",
     title: "Team",
   },
   {
@@ -39,7 +39,7 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Innovation ",
+    title: "Open Innovation ",
     icon: web,
   },
   {
@@ -145,7 +145,7 @@ const projects = [
       "RO&AI, BTI",
     image: carrent,
     source_code_link: "https://github.com/sameersam648",
-    linkedin_link: "https://www.linkedin.com/in/sameer-sam-7b7b3b1b7/",
+    linkedin_link: "https://www.linkedin.com/in/sameer-83733a2a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Jeelan Basha",
@@ -165,6 +165,16 @@ const projects = [
     image: tripguide,
     source_code_link: "https://github.com/Amankumar006",
     linkedin_link: "https://www.linkedin.com/in/aman-kumar-8102bb279/",
+
+  },
+  {
+    name: "Likhit Kumar",
+    description:
+      "AI&ML, BTI",
+    
+    image: likith,
+    source_code_link: "https://github.com/likhithkumarj",
+    linkedin_link: "https://www.linkedin.com/in/likhithkumarj/",
 
   },
 ];
