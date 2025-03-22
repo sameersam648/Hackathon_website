@@ -168,7 +168,7 @@ const projects = [
 
   },
   {
-    name: "Likhit Kumar",
+    name: "Likhith Kumar J",
     description:
       "AI&ML, BTI",
     
