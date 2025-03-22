@@ -7,11 +7,11 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 const contacts = [
-  { name: "Jeelan Basha", role: "Event Coordinator", phone: "+91 81979 73038" },
   { name: "Sameer", role: "Event Head", phone: "+91 7829 701 625" },
+  { name: "Jeelan Basha", role: "Event Coordinator", phone: "+91 81979 73038" },
   { name: "Aman Kumar", role: "Tech Lead", phone: "+91 88638 96724" },
-  { name: "Likhith Kumar J", role: "Operations Manager", phone: "+91 96327 24212" },
- 
+  { name: "Likhith Kumar", role: "Operations Manager", phone: "+91 96327 24212" },
+  
 ];
 
 const Contact = () => {
