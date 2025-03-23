@@ -27,5 +27,6 @@ Check out the live version of the website here: [https:btihackfest.netlify.app](
 
 ---
 
-## 📂 Project Structure
+## Open for Contributer's
+
 
