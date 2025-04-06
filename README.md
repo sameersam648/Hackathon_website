@@ -24,6 +24,7 @@ Check out the live version of the website here: [https:btihackfest.netlify.app](
 - **Frontend**: React.js, Tailwind CSS, Framer Motion
 - **Build Tool**: Vite
 - **Design Assets**: Custom graphics and icons
+  
 
 ---
 
