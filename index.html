@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logobti.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTI | HackFest'25</title>
+    
+    <script type="module" crossorigin src="/Hackathon_website/assets/index-fe20df7b.js"></script>
+    <link rel="modulepreload" crossorigin href="/Hackathon_website/assets/react-ca695b9f.js">
+    <link rel="modulepreload" crossorigin href="/Hackathon_website/assets/three-core-9a77f239.js">
+    <link rel="modulepreload" crossorigin href="/Hackathon_website/assets/fiber-07c23f9d.js">
+    <link rel="modulepreload" crossorigin href="/Hackathon_website/assets/drei-1f2e18e1.js">
+    <link rel="modulepreload" crossorigin href="/Hackathon_website/assets/react-router-9cdb2e5b.js">
+    <link rel="modulepreload" crossorigin href="/Hackathon_website/assets/framer-motion-f2b0c7ed.js">
+    <link rel="stylesheet" href="/Hackathon_website/assets/index-9dd75e0e.css">
+  <link rel="manifest" href="/Hackathon_website/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/Hackathon_website/registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+    
+    
+    
+    
+    <script>
+      // Wait for the main content to load
+      window.addEventListener('load', () => {
+        const robot3dContainer = document.createElement('div');
+        robot3dContainer.id = 'robot-3d';
+        robot3dContainer.innerHTML = `
+          <spline-viewer class="robot-3d" url="https://prod.spline.design/n1GgQ7m-zUCZcmW3/scene.splinecode"></spline-viewer>
+        `;
+        document.body.appendChild(robot3dContainer);
+
+        // Dynamically load the Spline viewer script
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = 'https://unpkg.com/@splinetool/viewer@1.9.77/build/spline-viewer.js';
+        document.body.appendChild(script);
+
+        // Update loading progress
+        const loadingText = document.getElementById('loading-text');
+        const splineViewer = document.querySelector('spline-viewer');
+        splineViewer.addEventListener('load', () => {
+          document.getElementById('loader').style.display = 'none';
+        });
+        splineViewer.addEventListener('progress', (event) => {
+          const progress = Math.round(event.detail * 100);
+          loadingText.textContent = `Loading... ${progress}%`;
+        });
+      });
+    </script>
+  </body>
+</html>
